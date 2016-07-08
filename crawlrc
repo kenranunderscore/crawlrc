@@ -14,9 +14,9 @@ runrest_ignore_monster += ^butterfly$:1
 runrest_ignore_message += contamination has completely
 runrest_ignore_message += rod.*has recharged
 runrest_ignore_message += your breath back
+runrest_ignore_message += Your transformation is almost over
 runrest_stop_message += You feel yourself slow down
 runrest_stop_message += You are starting to lose your buoyancy
-runrest_stop_message += Your transformation is almost over
 runrest_stop_message += back to life
 runrest_stop_message += is no longer charmed
 runrest_stop_message += (starving|devoid of blood)
@@ -24,11 +24,11 @@ runrest_stop_message += wrath finds you
 runrest_stop_message += lose consciousness
 runrest_stop_message += hell_effect:
 
-:if you.god() == "Xom" then
-runrest_stop_message += god:
-:else
-runrest_ignore_message += god:
-:end
+: if you.god() == "Xom" then
+    runrest_stop_message += god:
+: else
+    runrest_ignore_message += god:
+: end
 
 rest_wait_both = true
 
@@ -47,11 +47,11 @@ allow_self_target = prompt
 easy_eat_chunks = true
 auto_eat_chunks = true
 
-:if you.race() == "Deep Dwarf" then
-autofight_stop = 0
-:else
-autofight_stop = 30
-:end
+: if you.race() == "Deep Dwarf" then
+    autofight_stop = 0
+: else
+    autofight_stop = 30
+: end
 
 autofight_warning = 50
 
@@ -137,13 +137,14 @@ menu += lightred:scroll.*recharging
 menu += grey:scroll.*(amnesia|curse)
 menu += white:scroll.*acquirement
 # Damaging scrolls
-: if you.race() == "Vampire" or you.race() == "Mummy"
-:   or you.race() == "Ghoul" then
-  menu += blue:scroll.*holy word
-  menu += brown:scroll.*torment
+: if you.race() == "Vampire"
+: or you.race() == "Mummy"
+: or you.race() == "Ghoul" then
+    menu += blue:scroll.*holy word
+    menu += brown:scroll.*torment
 : else
-  menu += brown:scroll.*holy word
-  menu += blue:scroll.*torment
+    menu += brown:scroll.*holy word
+    menu += blue:scroll.*torment
 : end
 menu += yellow:scroll.*summoning
 # Hexes and Enchantments
@@ -346,9 +347,9 @@ autoinscribe += (fruit|royal jelly):@e3
 # This section is mostly copied from gammafunk's rc file
 more := force_more_message
 
-:if you.god() == "Ashenzari" then
-more += You have a vision of.*gates?
-:end
+: if you.god() == "Ashenzari" then
+    more += You have a vision of.*gates?
+: end
 
 more += The mighty Pandemonium lord .* resides here
 
