@@ -441,10 +441,10 @@ more += the royal jelly.* comes? into view
 ##### Webtiles #####
 ####################
 
-tile_font_crt_family = monospace
-tile_font_stat_family = monospace
-tile_font_msg_family = monospace
-tile_font_lbl_family = monospace
+tile_font_crt_family = Consolas
+tile_font_stat_family = Consolas
+tile_font_msg_family = Consolas
+tile_font_lbl_family = Consolas
 
 ####################
 ##### Lua code #####
