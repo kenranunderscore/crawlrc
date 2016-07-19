@@ -15,6 +15,7 @@ runrest_ignore_message += contamination has completely
 runrest_ignore_message += rod.*has recharged
 runrest_ignore_message += your breath back
 runrest_ignore_message += Your transformation is almost over
+runrest_ignore_message += You are no longer poisoned
 runrest_stop_message += You feel yourself slow down
 runrest_stop_message += You are starting to lose your buoyancy
 runrest_stop_message += back to life
@@ -96,9 +97,9 @@ menu += blue:mutagenic.*chunk
 menu += darkgrey:inedible
 menu += lightgrey: +(chunks?$|chunks? +)
 # These are analogous to chunks
-:if you.race() == "Vampire" then
-menu += lightgrey:potions? of blood
-:end
+: if you.race() == "Vampire" then
+    menu += lightgrey:potions? of blood
+: end
 
 # Other food
 menu += brown:fruit
