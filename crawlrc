@@ -71,6 +71,15 @@ warn_hatches = true
 ##### Colours #####
 ###################
 
+allow_extended_colours = true
+no_dark_brand = false
+bold_brightens_foreground = true
+
+display_char = item_book   : ∞
+display_char = permawall   : ▓
+display_char = wall        : ▒
+display_char = wall_magic  : ░
+
 # These should match the item_glyph colours exactly when possible.
 # For menu_colour, the first match ignores subsequent matches.
 menu := menu_colour
