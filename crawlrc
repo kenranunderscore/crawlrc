@@ -1,3 +1,5 @@
+# TEAMCAPTAIN Ge0ff
+
 ##################################
 ##### Travel and Exploration #####
 ##################################
@@ -15,9 +17,15 @@ runrest_ignore_message += contamination has completely
 runrest_ignore_message += rod.*has recharged
 runrest_ignore_message += your breath back
 runrest_ignore_message += Your transformation is almost over
-runrest_ignore_message += You are no longer poisoned
-runrest_stop_message += You feel yourself slow down
-runrest_stop_message += You are starting to lose your buoyancy
+runrest_ignore_message += Your transformation has ended
+runrest_ignore_message += are no longer poisoned
+runrest_ignore_message += feel a strong urge
+runrest_ignore_message += finish eating
+runrest_ignore_message += feel your anger subside
+runrest_ignore_message += feel yourself speed up
+runrest_ignore_message += feel less exhausted
+
+runrest_stop_message += starting to lose your buoyancy
 runrest_stop_message += back to life
 runrest_stop_message += is no longer charmed
 runrest_stop_message += (starving|devoid of blood)
@@ -73,7 +81,7 @@ menu =
 # entries from that file.
 menu += notes:white:Reached XP level
 
-### General Inventory###
+### General Inventory ###
 # Items currently not affecting you.
 menu += darkgrey:(melded)
 # Items disliked by your god.
@@ -244,7 +252,7 @@ item += scroll.*recharging:lightred
 item += scroll.*(amnesia|curse):lightgrey
 item += scroll.*acquirement:white
 : if you.race() == "Vampire" or you.race() == "Mummy"
-:  or you.race() == "Ghoul" then
+: or you.race() == "Ghoul" then
   item += scroll.*holy word:blue
   item += scroll.*torment:brown
 : else
@@ -387,8 +395,7 @@ more += dispelling energy hits you
 more += You are blasted by holy energy!
 more += You are (blasted|electrocuted)!
 more += You are.*(confused|)
-more += You are poisoned
-more += You are more poisoned
+more += You are (?!no longer).*(confused|poisoned)
 more += flesh rotting
 more += (starving|devoid of blood)
 more += god:(sends|finds|silent|anger)
@@ -428,7 +435,7 @@ more += Your scales start
 more += You feel monstrous
 more += Jiyva alters your body
 : if you.god() == "Xom" then
-more += god:
+  more += god:
 : end
 
 # Problematic monsters
