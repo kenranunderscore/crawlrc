@@ -362,6 +362,8 @@ autoinscribe += (fruit|royal jelly):@e3
 ##### (more) Prompts #####
 ##########################
 
+show_more = false
+
 # This section is mostly copied from gammafunk's rc file
 more := force_more_message
 
@@ -403,7 +405,6 @@ more += Ouch! That really hurt!
 more += dispelling energy hits you
 more += You are blasted by holy energy!
 more += You are (blasted|electrocuted)!
-more += You are.*(confused|)
 more += You are (?!no longer).*(confused|poisoned)
 more += flesh rotting
 more += (starving|devoid of blood)
