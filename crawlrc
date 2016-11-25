@@ -67,13 +67,15 @@ autofight_warning = 50
 easy_door = true
 warn_hatches = true
 
-###################
-##### Colours #####
-###################
+##############################
+##### Colours and Glyphs #####
+##############################
 
 allow_extended_colours = true
 no_dark_brand = false
 bold_brightens_foreground = true
+
+mon_glyph += player:red
 
 display_char = item_book   : ∞
 display_char = permawall   : ▓
