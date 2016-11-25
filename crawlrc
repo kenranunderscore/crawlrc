@@ -59,7 +59,7 @@ auto_eat_chunks = true
 : if you.race() == "Deep Dwarf" then
     autofight_stop = 0
 : else
-    autofight_stop = 30
+    autofight_stop = 50
 : end
 
 autofight_warning = 50
@@ -77,8 +77,10 @@ bold_brightens_foreground = true
 
 display_char = item_book   : ∞
 display_char = permawall   : ▓
-display_char = wall        : ▒
-display_char = wall_magic  : ░
+display_char = wall        : ░
+#display_char = wall        : ▒
+display_char = wall_magic  : ▒
+#display_char = wall_magic  : ░
 
 # These should match the item_glyph colours exactly when possible.
 # For menu_colour, the first match ignores subsequent matches.
