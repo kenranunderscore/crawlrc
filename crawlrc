@@ -469,6 +469,12 @@ more += (?-i:[A-Z]).* comes? into view
 ## 0.17
 more += the royal jelly.* comes? into view
 
+##################
+##### Macros #####
+##################
+
+macros += M o ===autoexplore_with_prompt
+
 ####################
 ##### Webtiles #####
 ####################
@@ -601,6 +607,12 @@ tile_font_lbl_family = Consolas
     -------------------------
     ---- End force_mores ----
     -------------------------
+
+    function autoexplore_with_prompt()
+        if crawl.yesno("Really use autoexplore? (y/n)", true, 'n') then
+            crawl.sendkeys("o")
+        end
+    end
 }
 
 {
