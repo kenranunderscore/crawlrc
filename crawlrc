@@ -79,10 +79,8 @@ mon_glyph += player:red
 
 display_char = item_book   : ∞
 display_char = permawall   : ▓
-display_char = wall        : ░
-#display_char = wall        : ▒
-display_char = wall_magic  : ▒
-#display_char = wall_magic  : ░
+display_char = wall        : ▒
+display_char = wall_magic  : ░
 
 # These should match the item_glyph colours exactly when possible.
 # For menu_colour, the first match ignores subsequent matches.
@@ -207,8 +205,10 @@ menu += cyan:manual of
 menu += lightcyan:manual
 menu += lightmagenta:unidentified.*artefact.*
 menu += white:.*artefact.*
-menu += lightblue:unidentified .*(potion|scroll|wand|jewellery|spellbook|rod|magical staff)
-menu += magenta:.*known .*(ring of (dexterity|strength|intelligence|slaying|evasion|protection(?! from))|amulet of reflection)
+menu += lightblue:unidentified .*(potion|scroll|wand|jewellery|spellbook)
+menu += lightblue:unidentified .*(rod|magical staff)
+menu += magenta:.*known .*(ring of (dexterity|strength|intelligence|slaying)
+menu += magenta:.*known .*(evasion|protection(?! from))|amulet of reflection)
 menu += inventory:lightgray:.*(book|jewellery|magical staff)
 # Ego items
 menu += lightblue:unidentified.*weapon.*(runed|glowing|enchanted)
@@ -229,7 +229,8 @@ msc += mute:you swap places
 msc += mute:your.*(looks stronger|shudders|resists)
 msc += mute:your.*(stumbles backwards|holds.*ground)
 msc += mute:your.*(blinks|safely over)
-msc += mute:(phases out.*|misses) (your|something).* msc += mute:your.*(picks up|drops)
+msc += mute:(phases out.*|misses) (your|something).*
+msc += mute:your.*(picks up|drops)
 msc += mute:your.*basks in the mutagenic energy
 msc += mute:your.*(struggles|tears|pulls away).*(web|net)
 
@@ -300,13 +301,16 @@ item += wand of.*hasting:lightmagenta
 item += ( rod ):yellow
 item += (identified|known).*(jewellery|magical staff):brown
 item += identified.*spellbook:magenta
-item += unidentified.*(potion|scroll|jewellery|wand|rod|magical staff).*:lightblue
+item += unidentified.*(potion|scroll|jewellery|wand).*:lightblue
+item += unidentified.*(rod|magical staff).*:lightblue
 item += unidentified.*book:lightmagenta
 item += manual:lightcyan
 item += manual of:cyan
 
 # Jewelry types
-item += known.*(ring of (dexterity|strength|intelligence|slaying|evasion|protection(?! from))|amulet of reflection):magenta
+item += known.*ring of (dexterity|strength|intelligence|slaying):magenta
+item += known.*ring of (evasion|protection(?! from)):magenta
+item += known.*amulet of reflection:magenta
 item += identified.*artefact.*(jewellery):white
 item += unidentified.*artefact.*(jewellery).*:lightmagenta
 item += (a )?stones?$:lightgray
@@ -453,7 +457,11 @@ more += Jiyva alters your body
 : end
 
 # Problematic monsters
-more += (giant eyeball|shining eye|cacodemon|neqoxec|guardian serpent|flayed ghost|greater mummy|mummy priest|hell sentinel|fiend|tzitzimitl|tormentor|hellion|lich|executioner|orb of fire|death cob|juggernaut|moth of wrath|ghost moth|curse toe|curse skull|draconian shifter).*into view
+more += (giant eyeball|shining eye|cacodemon|neqoxec).*into view
+more += (flayed ghost|greater mummy|mummy priest|hell sentinel|fiend).*into view
+more += (tzitzimitl|tormentor|hellion|lich|executioner|orb of fire).*into view
+more += (juggernaut|moth of wrath|ghost moth|curse toe|curse skull).*into view
+more += (draconian shifter|guardian serpent|death cob).*into view
 
 ## Any uniques and any pan lords
 more += (?-i:[A-Z]).* comes? into view
@@ -482,13 +490,6 @@ tile_font_lbl_family = Consolas
     -- See README.md for documentation.
 
     last_turn = you.turns()
-
-    -- Each entry must have a name field with a descriptive name, a pattern field
-    -- giving the regexp matching the appropriate monster(s), a cond field giving
-    -- the condition type, and a cutoff field giving the max value where the
-    -- force-more is active. Possible values for cond are xl and maxhp. Note that
-    -- the final pattern will be "(pattern).*into view" where pattern is the value
-    -- from the entry.
 
     fm_patterns = {
       -- General early game threats
