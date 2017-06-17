@@ -589,7 +589,8 @@ more += the royal jelly.* comes? into view
 ##### Macros #####
 ##################
 
-macros += M o ===autoexplore_with_prompt
+# More annoying than helpful most of the time
+#macros += M o ===autoexplore_with_prompt
 
 ####################
 ##### Webtiles #####
