@@ -39,7 +39,7 @@ runrest_stop_message += hell_effect:
     runrest_ignore_message += god:
 : end
 
-rest_wait_both = true
+rest_wait_both = false
 
 auto_sacrifice = true
 
@@ -250,8 +250,11 @@ menu += cyan:manual of
 menu += lightcyan:manual
 menu += lightmagenta:unidentified.*artefact.*
 menu += white:.*artefact.*
-menu += lightblue:unidentified .*(potion|scroll|wand|jewellery|spellbook|rod|magical staff)
-menu += magenta:.*known .*(ring of (dexterity|strength|intelligence|slaying|evasion|protection(?! from))|amulet of reflection)
+menu += lightblue:unidentified .*(potion|scroll|wand|jewellery|spellbook)
+menu += lightblue:unidentified .*(rod|magical staff)
+menu += magenta:.*known .*ring of (evasion|protection(?! from))
+menu += magenta:.*known .*ring of (dexterity|strength|intelligence|slaying)
+menu += magenta:.*known .*amulet of reflection
 menu += inventory:lightgray:.*(book|jewellery|magical staff)
 # Ego items
 menu += lightblue:unidentified.*weapon.*(runed|glowing|enchanted)
@@ -395,13 +398,16 @@ item += ( rod ):yellow
 item += (identified|known).*(jewellery|magical staff):brown
 item += identified.*spellbook:magenta
 # rods gone in 0.20
-item += unidentified.*(potion|scroll|jewellery|wand|rod|magical staff).*:lightblue
+item += unidentified.*(potion|scroll|jewellery|wand).*:lightblue
+item += unidentified.*(rod|magical staff).*:lightblue
 item += unidentified.*book:lightmagenta
 item += manual:lightcyan
 item += manual of:cyan
 
 ### Jewellery ###
-item += known.*(ring of (dexterity|strength|intelligence|slaying|evasion|protection(?! from))|amulet of reflection):magenta
+item += known.*ring of (dexterity|strength|intelligence|slaying):magenta
+item += known.*ring of (protection(?! from)|evasion):magenta
+item += known.*amulet of reflection:magenta
 item += identified.*artefact.*(jewellery):white
 item += unidentified.*artefact.*(jewellery).*:lightmagenta
 item += (a )?stones?$:lightgray
