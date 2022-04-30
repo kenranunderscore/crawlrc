@@ -63,7 +63,7 @@ show_more = false
 
 ##### Webtiles
 
-tile_font_crt_family = Courier New
-tile_font_stat_family = Courier New
-tile_font_msg_family = Courier New
-tile_font_lbl_family = Courier New
+tile_font_crt_family = Courier Prime
+tile_font_stat_family = Courier Prime
+tile_font_msg_family = Courier Prime
+tile_font_lbl_family = Courier Prime
